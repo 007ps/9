@@ -130,7 +130,7 @@ function CheckFW() {
       });
     }
 
-    document.title = "PSFree | " + fwVersion
+    document.title = "007 | " + fwVersion
   } else {
     let platform = 'Unknown platform';
 
