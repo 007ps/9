@@ -122,7 +122,7 @@ function CheckFW() {
       });
     }
 
-    document.title = "BON | " + fwVersion
+    document.title = "007 | " + fwVersion
   } else {
     let platform = 'Unknown platform';
 
