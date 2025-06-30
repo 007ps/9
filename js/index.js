@@ -7,8 +7,6 @@ const menuBtns = document.querySelectorAll('.menu-btn');
 const psBtns = document.querySelectorAll('.ps-btn');
 const plsbtn = document.querySelectorAll('.button-container button');
 
-var ps4fw
-
 window.addEventListener('DOMContentLoaded', loadsettings);
 
 document.getElementById('jailbreak').addEventListener('click', () => {
@@ -111,15 +109,9 @@ function CheckFW() {
     const firmwareMatch = userAgent.match(/PlayStation 4\/([\d.]+)/);
     const fwVersion = firmwareMatch ? firmwareMatch[1] : null;
 
-    if (fwVersion === '9.00' || fwVersion === '9.03' || fwVersion === '9.60') {
+    if (fwVersion === '7.00' || fwVersion === '7.01' || fwVersion === '7.02' || fwVersion === '7.50' || fwVersion === '7.51' || fwVersion === '7.55' || fwVersion === fwVersion === '8.00' || fwVersion === '8.01' || fwVersion === '8.01' || fwVersion === '8.03' || fwVersion === '8.50' || fwVersion === '8.52' || fwVersion === '9.00' || fwVersion === '9.03' || fwVersion === '9.04' || fwVersion === '9.50' || fwVersion === '9.51' || fwVersion === '9.60') {
       document.getElementById('PS4FW').textContent = `PS4 FW: ${fwVersion} | Compatible`;
       document.getElementById('PS4FW').style.color = 'green';
-      ps4fw = fwVersion.replace('.','');
-    } else if (fwVersion === '7.00' || fwVersion === '7.01' || fwVersion === '7.02' || fwVersion === '7.50' || fwVersion === '7.51' || fwVersion === '7.55' || fwVersion === fwVersion === '8.00' || fwVersion === '8.01' || fwVersion === '8.03' || fwVersion === '8.50' || fwVersion === '8.52' || fwVersion === '9.04' || fwVersion === '9.50' || fwVersion === '9.51') {
-      document.getElementById('PS4FW').textContent = `PS4 FW: ${fwVersion} | Semi-Compatible`;
-      document.getElementById('PS4FW').style.color = 'orange';
-      choosejb('HEN');
-      ps4fw = fwVersion.replace('.','');
     } else {
       document.getElementById('PS4FW').textContent = `PS4 FW: ${fwVersion || 'Unknown'} | Incompatible`;
       document.getElementById('PS4FW').style.color = 'red';
@@ -130,7 +122,7 @@ function CheckFW() {
       });
     }
 
-    document.title = "007 | " + fwVersion
+    document.title = "BON | " + fwVersion
   } else {
     let platform = 'Unknown platform';
 
