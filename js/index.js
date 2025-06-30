@@ -130,7 +130,7 @@ function CheckFW() {
       });
     }
 
-    document.title = "007 | " + fwVersion
+    document.title = "PSFree | " + fwVersion
   } else {
     let platform = 'Unknown platform';
 
@@ -298,16 +298,6 @@ function savejbflavor() {
 }
 
 function loadajbsettings(){
-// --- Force GoldHEN and Auto-Jailbreak selection ---
-localStorage.setItem('selectedHEN', 'GoldHEN');
-localStorage.setItem('GoldHEN', 1);
-localStorage.removeItem('HEN');
-ckbaj.checked = true;
-localStorage.setItem('autojbstate', 'true');
-const goldHENRadio = document.querySelector('input[name="hen"][value="GoldHEN"]');
-if (goldHENRadio) goldHENRadio.checked = true;
-choosejb('GoldHEN');
-// --------------------------------------------------  
   if (savedaj !== null) {
     ckbaj.checked = savedaj === 'true';
     onCheckboxChange(ckbaj.checked);
@@ -318,17 +308,17 @@ choosejb('GoldHEN');
     onCheckboxChange(ckbdc.checked);
   }
 
-  if (ckbaj.checked && localStorage.getItem('selectedHEN') === 'GoldHEN') {
+  if (ckbaj.checked) {
     if (sessionStorage.getItem('jbsuccess')) {
-        console.log('Already jailbroken!');
+      console.log('Aleardy jailbroken !');
     } else {
-        document.getElementById('jailbreak').style.display = 'none';
-        document.getElementById('loader').style.display = 'flex';
-        setTimeout(() => {
-            jailbreak();
-        }, 1000); // run faster after cache
+      document.getElementById('jailbreak').style.display = 'none';
+      document.getElementById('loader').style.display = 'flex';
+      setTimeout(() => {
+        jailbreak();
+      }, 3000);
     }
-}
+  }
 
   if (ckbdc.checked) {
     document.getElementById('DebugConsole').style.display  = 'flex';
@@ -370,7 +360,7 @@ async function jailbreak() {
 
     if (localStorage.getItem('HEN')) {
       if (JailbreakModule && typeof JailbreakModule.HEN === 'function') {
-          JailbreakModule.HEN(ps4fw);
+          JailbreakModule.HEN();
       } else {
           console.error("HEN function not found in Jailbreak.js module");
       }
