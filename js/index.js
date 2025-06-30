@@ -130,7 +130,7 @@ function CheckFW() {
       });
     }
 
-    document.title = "BONDOK | " + fwVersion
+    document.title = "007 | " + fwVersion
   } else {
     let platform = 'Unknown platform';
 
